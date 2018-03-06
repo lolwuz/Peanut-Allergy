@@ -4,6 +4,7 @@ import Stats from 'stats.js';
 import Boot from './states/Boot';
 import Preload from './states/Preload';
 import Main from './states/Main';
+import Menu from './states/Menu';
 import './assets/css/index.css';
 
 /**
@@ -30,6 +31,7 @@ class Game extends Phaser.Game {
     // Setup the different game states.
     this.state.add('Boot', Boot, false);
     this.state.add('Preload', Preload, false);
+    this.state.add('Menu', Menu, false);
     this.state.add('Main', Main, false);
 
     // Kick things off with the boot state.

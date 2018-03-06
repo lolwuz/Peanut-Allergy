@@ -4,6 +4,8 @@ const AssetManifest = {
   ],
   images: [
     'bg.png',
+    'startbtn.png',
+    'startbtnp.png'
   ],
   fonts: {
     google: {
