@@ -19,9 +19,6 @@ export default class Boot extends Phaser.State {
     // Don't pause the game on blur.
     this.game.stage.disableVisibilityChange = true;
 
-    // Disable clearing the canvas on each tick (usually not needed).
-    this.game.clearBeforeRender = false;
-
     // Disable right click.
     this.game.canvas.oncontextmenu = e => e.preventDefault();
 
