@@ -1,0 +1,36 @@
+{"frames": [
+
+{
+	"filename": "pduck.png",
+	"frame": {"x":0,"y":0,"w":650,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":650,"h":800},
+	"sourceSize": {"w":650,"h":800}
+},
+{
+	"filename": "prun.png",
+	"frame": {"x":650,"y":0,"w":650,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":650,"h":800},
+	"sourceSize": {"w":650,"h":800}
+},
+{
+	"filename": "pwalk.png",
+	"frame": {"x":1300,"y":0,"w":650,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":650,"h":800},
+	"sourceSize": {"w":650,"h":800}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ptexture.png",
+	"format": "RGBA8888",
+	"size": {"w":1950,"h":800},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:70c0cff3bfbc433cc89f91cb04a32a44:d5731a28c4be374ca8b2ffcc34ed0cbc:322df1cfe03afe28c87b9151976a099c$"
+}
+}

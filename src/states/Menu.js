@@ -7,16 +7,14 @@ export default class Menu extends Phaser.State {
     }
  
     create() {
-
+        // Setup stage background and add buttons.
         this.game.stage.setBackgroundColor("#a8c9ff");
 
         this.startButton = this.game.add.button(this.game.world.centerX - 95, this.game.world.centerY - 100, 'startbtn', this.activationOnClick, this, 2, 1, 0);
 
         this.startButton.onInputOver.add(this.over, this);
         this.startButton.onInputOut.add(this.out, this);
-        this.startButton.onInputUp.add(this.up, this);
-
-        
+        this.startButton.onInputUp.add(this.up, this);    
     }
 
     up(){
@@ -35,6 +33,5 @@ export default class Menu extends Phaser.State {
         console.log("Starting main");
         this.game.state.start('Main');
     }
-
-  }
+}
   
