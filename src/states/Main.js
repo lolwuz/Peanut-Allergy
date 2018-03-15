@@ -13,10 +13,8 @@ export default class Main extends Phaser.State {
     create() {
         // Enable arcade physics.
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
-
         // Enable cursor input
         this.game.input.mouse.capture = true;
-
         // Add background tile.
         this.game.stage.setBackgroundColor("#81D4FA");
 
@@ -46,14 +44,14 @@ export default class Main extends Phaser.State {
         let startGround = new Ground({
             // Start ground
             game: this.game,
-            x: 0,
+            x: this.game.world.centerX,
             y: this.game.world.centerY + 600,
-            width: this.game.world.width / 2,
+            width: this.game.world.width,
             height: this.game.height / 2
         });
         this.game.time.events.repeat(
-            Phaser.Timer.SECOND * 8,
-            10,
+            Phaser.Timer.SECOND * 2,
+            1000,
             this.spawnGround,
             this
         );

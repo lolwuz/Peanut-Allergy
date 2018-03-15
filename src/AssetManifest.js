@@ -1,12 +1,14 @@
 const AssetManifest = {
   sprites: [
     'textures.png',
-    'p.png'
+    'p.png',
+    'particles.png'
   ],
   images: [
     'bg.png',
     'startbtn.png',
-    'startbtnp.png'
+    'startbtnp.png',
+    'particles.png'
   ],
   fonts: {
     google: {
