@@ -33,6 +33,12 @@ export default class Main extends Phaser.State {
             frame: "pwalk.png"
         });
 
+        this.player2 = new Phaser.Sprite(this.game, this.game.world.centerX - 200, this.game.world.centerY, "p", "pwalk.png");
+        this.game.add.existing(this.player2);
+        this.game.physics.enable(this.player2, Phaser.Physics.ARCADE);
+        this.player2.body.bounce.y = 0.1;
+        this.player2.anchor.setTo(0.5);
+
         // Add Physics to player
         this.game.physics.arcade.gravity.y = 1000;
 
@@ -112,8 +118,8 @@ export default class Main extends Phaser.State {
         if (this.game.physics.arcade.collide(this.player, this.groundArray)) {
             this.player.hasGrounded = true; // Player has landed on the ground
         }
-
-        this.game.physics.arcade.collide(this.player.emitter, this.groundArray);
+        this.game.physics.arcade.collide(this.player, this.groundArray)
+        this.game.physics.arcade.collide(this.player2, this.groundArray);
 
         // Update clouds
         for (let i = 0; i < this.cloudArray.length; i++) {
@@ -122,16 +128,23 @@ export default class Main extends Phaser.State {
         }
 
         // Update ground
+        let lastGround = this.groundArray[this.groundArray.length - 1];
+        let firstGround = this.groundArray[0];
+
         for (let i = 0; i < this.groundArray.length; i++) {
             this.groundArray[i].speed = this.speed;
             this.groundArray[i].update(this.speed);
         }
-        let lastGround = this.groundArray[this.groundArray.length - 1];
+        
         if(lastGround.x < this.world.centerX){
             console.log("spawning new Ground");
             this.spawnGround();
         }
-
+        
+        if(firstGround.x + firstGround.width < this.world.bounds.left){
+            this.groundArray.shift().destroy();
+        }
+ 
         // Game over?
         if(this.player.y > this.world.bounds.bottom){
             this.score.setLives(-1);
