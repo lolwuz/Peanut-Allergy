@@ -2,6 +2,7 @@ import throttle from "lodash.throttle";
 import Player from "../objects/Player";
 import Cloud from "../objects/Cloud";
 import Ground from "../objects/Ground";
+import Score from "../objects/Score";
 
 /**
  * Setup and display the main game state.
@@ -21,7 +22,8 @@ export default class Main extends Phaser.State {
 
         // Starting speed
         this.speed = 4;
-
+        this.score = new Score();
+        
         // Add a player to the game.
         this.player = new Player({
             game: this.game,
@@ -52,15 +54,9 @@ export default class Main extends Phaser.State {
             y: this.game.world.centerY + 300 * window.devicePixelRatio,
             width: this.game.world.width * 2,
             height: this.game.height / 2,
-            speed: 4
+            speed: 4,
+            spawnGround: this.spawGround
         });
-        this.game.time.events.repeat(
-            Phaser.Timer.SECOND * 8,
-            1000,
-            this.spawnGround,
-            this
-        );
-
         this.groundArray.push(startGround);
 
         // Setup listener for window resize.
@@ -108,8 +104,9 @@ export default class Main extends Phaser.State {
      * Handle actions in the main game loop.
      */
     update() {
-        // update game speed
-        this.speed = this.speed + 0.01;
+        // Update gamespeed
+        this.speed = this.speed + 0.001;
+
         // Check collisions
         if (this.game.physics.arcade.collide(this.player, this.groundArray)) {
             this.player.hasGrounded = true; // Player has landed on the ground
@@ -126,8 +123,17 @@ export default class Main extends Phaser.State {
             this.groundArray[i].speed = this.speed;
             this.groundArray[i].update(this.speed);
         }
-        
+        let lastGround = this.groundArray[this.groundArray.length - 1];
+        if(lastGround.x < this.world.centerX){
+            console.log("spawning new Ground");
+            this.spawnGround();
+        }
+
         // Game over?
+        if(this.player.y < this.world.bounds.bottom.y){
+            // this.score.lives(-1);
+            // this.game.time.paused();
+        }
         if(this.player.y < - 1000){
             this.game.state.start('Icarus');
         }
