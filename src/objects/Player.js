@@ -19,19 +19,20 @@ export default class Player extends Phaser.Sprite {
         this.game.add.existing(this.jumpIndicator);
 
         // Emitter
-        this.emitter = this.game.add.emitter(40, 80, 50);
+        this.emitter = this.game.add.emitter(40, 80, 1000);
         this.emitter.makeParticles('particles');
 
-        this.emitter.minParticleSpeed.setTo(-400, 0);
-        this.emitter.maxParticleSpeed.setTo(-300, 0);
+        this.emitter.minParticleSpeed.setTo(-1000, 0);
+        this.emitter.maxParticleSpeed.setTo(-800, 0);
         this.emitter.minParticleScale = 0.5;
         this.emitter.maxParticleScale = 0.4;
         this.emitter.gravity = 150;
         this.emitter.bounce.setTo(0.5, 0.5);
-        this.emitter.angularDrag = 30;
-        
+        this.emitter.angularDrag = 0;
+
         // Add the sprite to the game.
         this.game.add.existing(this);
+        this.game.physics.enable(this.emitter, Phaser.Physics.ARCADE);
         this.game.physics.enable(this, Phaser.Physics.ARCADE);
         this.body.bounce.y = 0.1;
         this.anchor.setTo(0.5);
@@ -77,7 +78,7 @@ export default class Player extends Phaser.Sprite {
             this.hasGrounded = false;
             this.body.velocity.y = -this.jumpPower; 
             this.jumpPower = 0;
-            this.emitter.start(false, 10000, 10, 500000, false);
+            this.emitter.start(false, 5000, 20);
         }
     }
 }

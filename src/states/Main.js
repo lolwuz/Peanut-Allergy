@@ -59,6 +59,7 @@ export default class Main extends Phaser.State {
         });
         this.groundArray.push(startGround);
 
+
         // Setup listener for window resize.
         window.addEventListener(
             "resize",
@@ -112,6 +113,8 @@ export default class Main extends Phaser.State {
             this.player.hasGrounded = true; // Player has landed on the ground
         }
 
+        this.game.physics.arcade.collide(this.player.emitter, this.groundArray);
+
         // Update clouds
         for (let i = 0; i < this.cloudArray.length; i++) {
             this.cloudArray[i].speed = this.speed;
@@ -130,9 +133,13 @@ export default class Main extends Phaser.State {
         }
 
         // Game over?
-        if(this.player.y < this.world.bounds.bottom.y){
-            // this.score.lives(-1);
+        if(this.player.y > this.world.bounds.bottom){
+            this.score.setLives(-1);
             // this.game.time.paused();
+        }
+
+        if(this.score.getLives() < 1){
+            // this.game.state.start('Icarus');
         }
         if(this.player.y < - 1000){
             this.game.state.start('Icarus');
