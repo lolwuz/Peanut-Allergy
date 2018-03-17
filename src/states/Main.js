@@ -22,7 +22,7 @@ export default class Main extends Phaser.State {
 
         // Starting speed
         this.speed = 4;
-        this.score = new Score();
+        this.score = new Score({game: this.game});
         
         // Add a player to the game.
         this.player = new Player({
@@ -38,7 +38,7 @@ export default class Main extends Phaser.State {
         this.game.physics.enable(this.player2, Phaser.Physics.ARCADE);
         this.player2.body.bounce.y = 0.1;
         this.player2.anchor.setTo(0.5);
-
+        
         // Add Physics to player
         this.game.physics.arcade.gravity.y = 1000;
 
@@ -118,8 +118,11 @@ export default class Main extends Phaser.State {
         if (this.game.physics.arcade.collide(this.player, this.groundArray)) {
             this.player.hasGrounded = true; // Player has landed on the ground
         }
-        this.game.physics.arcade.collide(this.player, this.groundArray)
+        this.game.physics.arcade.collide(this.player, this.groundArray);
         this.game.physics.arcade.collide(this.player2, this.groundArray);
+
+        let target = new Phaser.Point(this.player.x, this.player.y).add(-200, 0);
+        this.game.physics.arcade.moveToObject(this.player2, target, this.speed, 100);
 
         // Update clouds
         for (let i = 0; i < this.cloudArray.length; i++) {

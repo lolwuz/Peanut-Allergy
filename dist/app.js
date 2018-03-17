@@ -1787,12 +1787,16 @@ var map = {
 	"./images/bg.png": 348,
 	"./images/bg@2x.png": 349,
 	"./images/bg@3x.png": 350,
+	"./images/heart.png": 386,
+	"./images/heart@2x.png": 388,
+	"./images/heart@3x.png": 387,
 	"./images/particles.png": 351,
 	"./images/particles@2x.png": 352,
 	"./images/peanut.png": 353,
 	"./images/peanut@2x.png": 354,
 	"./images/peanut@3x.png": 355,
 	"./images/peanut_butter.png": 356,
+	"./images/peanut_products_trans.png": 385,
 	"./images/startbtn.png": 357,
 	"./images/startbtn@2x.png": 358,
 	"./images/startbtn@3x.png": 359,
@@ -4080,7 +4084,8 @@ var AssetManifest = {
     'bg.png',
     'startbtn.png',
     'startbtnp.png',
-    'particles.png'
+    'particles.png',
+    'heart.png'
   ],
   fonts: {
     google: {
@@ -4318,9 +4323,21 @@ var Ground = (function (superclass) {
 
 /* harmony default export */ var objects_Ground = (Ground);
 // CONCATENATED MODULE: ./src/objects/Score.js
-var Score = function Score(){
+var Score = function Score(ref){
+    var this$1 = this;
+    var game = ref.game;
+
+    this.game = game;
     this.lives = 3;
     this.gameScore = 0;
+
+    // Foreach live print a heart 
+    for(var i = 0; i < this.lives; i++){
+        var image = new Phaser.Image(this$1.game, this$1.game.world.bounds.topLeft.x, this$1.game.world.bounds.topLeft.y, "heart");
+        image.x = image.width * i;
+            
+        this$1.game.add.existing(image);
+    }
 };
 
 Score.prototype.getLives = function getLives (){
@@ -4362,7 +4379,7 @@ var Main_Main = (function (superclass) {
 
         // Starting speed
         this.speed = 4;
-        this.score = new objects_Score();
+        this.score = new objects_Score({game: this.game});
         
         // Add a player to the game.
         this.player = new objects_Player({
@@ -4378,7 +4395,7 @@ var Main_Main = (function (superclass) {
         this.game.physics.enable(this.player2, Phaser.Physics.ARCADE);
         this.player2.body.bounce.y = 0.1;
         this.player2.anchor.setTo(0.5);
-
+        
         // Add Physics to player
         this.game.physics.arcade.gravity.y = 1000;
 
@@ -4460,8 +4477,11 @@ var Main_Main = (function (superclass) {
         if (this.game.physics.arcade.collide(this.player, this.groundArray)) {
             this.player.hasGrounded = true; // Player has landed on the ground
         }
-        this.game.physics.arcade.collide(this.player, this.groundArray)
+        this.game.physics.arcade.collide(this.player, this.groundArray);
         this.game.physics.arcade.collide(this.player2, this.groundArray);
+
+        var target = new Phaser.Point(this.player.x, this.player.y).add(-200, 0);
+        this.game.physics.arcade.moveToObject(this.player2, target, this.speed, 100);
 
         // Update clouds
         for (var i = 0; i < this.cloudArray.length; i++) {
@@ -9927,6 +9947,36 @@ module.exports = throttle;
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(63)))
 
+/***/ }),
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/peanut_products_trans.png?67f000e43cfb3098e975d54c0636a5e8";
+
+/***/ }),
+/* 386 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/heart.png?c24e62732bafe1bd47d3efe6b58a1e50";
+
+/***/ }),
+/* 387 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/heart@3x.png?fcd0300deb4fd92735c20a6ea91ec1ca";
+
+/***/ }),
+/* 388 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/heart@2x.png?59dd6041c3fd4b623778f24210b77601";
+
 /***/ })
 ],[144]);
-//# sourceMappingURL=app.js.map?71ed651e5e815b027e7e
+//# sourceMappingURL=app.js.map?54c1ae57e18e2471a971

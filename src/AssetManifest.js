@@ -8,7 +8,8 @@ const AssetManifest = {
     'bg.png',
     'startbtn.png',
     'startbtnp.png',
-    'particles.png'
+    'particles.png',
+    'heart.png'
   ],
   fonts: {
     google: {
