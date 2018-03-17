@@ -6,7 +6,7 @@ export default class Cloud extends Phaser.Graphics {
         super(game, game.world.centerX + game.world.width, game.world.centerY + -400);
         // Create rectange
         this.beginFill(0xFFFFFF);
-        this.drawRect(0, 0, Math.floor((Math.random() * 400) + 200), Math.floor((Math.random() * 200) + 100));
+        this.drawRect(0, 0, Math.floor((Math.random() * 200) + 100) * window.devicePixelRatio, Math.floor((Math.random() * 100) + 50) * window.devicePixelRatio);
         this.endFill();
 
         // Set cloud speed
@@ -17,7 +17,7 @@ export default class Cloud extends Phaser.Graphics {
     }
   
     update() {
-      this.x = this.x - this.speed; 
+        this.x = this.x - this.speed; 
     }
-  }
+}
   

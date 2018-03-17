@@ -16,7 +16,11 @@ export default class Main extends Phaser.State {
         // Enable cursor input
         this.game.input.mouse.capture = true;
         // Add background tile.
-        this.game.stage.setBackgroundColor("#81D4FA");
+        this.game.stage.setBackgroundColor("#40C4FF");
+       
+
+        // Starting speed
+        this.speed = 4;
 
         // Add a player to the game.
         this.player = new Player({
@@ -28,7 +32,7 @@ export default class Main extends Phaser.State {
         });
 
         // Add Physics to player
-        this.game.physics.arcade.gravity.y = 600;
+        this.game.physics.arcade.gravity.y = 1000;
 
         // Clouds
         this.cloudArray = [];
@@ -45,12 +49,13 @@ export default class Main extends Phaser.State {
             // Start ground
             game: this.game,
             x: this.game.world.centerX,
-            y: this.game.world.centerY + 600,
-            width: this.game.world.width,
-            height: this.game.height / 2
+            y: this.game.world.centerY + 300 * window.devicePixelRatio,
+            width: this.game.world.width * 2,
+            height: this.game.height / 2,
+            speed: 4
         });
         this.game.time.events.repeat(
-            Phaser.Timer.SECOND * 2,
+            Phaser.Timer.SECOND * 8,
             1000,
             this.spawnGround,
             this
@@ -81,17 +86,18 @@ export default class Main extends Phaser.State {
         const config = {
             game: this.game,
             x: this.game.world.centerX + this.game.world.width,
-            y: this.game.world.centerY + 600,
-            width: this.game.world.width,
-            height: this.game.height / 2
+            y: this.game.world.centerY + 300 * window.devicePixelRatio,
+            width: Math.floor((Math.random() * 1400) + 1200) * window.devicePixelRatio,
+            height: this.game.height / 2,
+            speed: this.speed
         };
         this.groundArray.push(new Ground(config));
-        }
+    }
 
-        /**
-         * Resize the game to fit the window.
-         */
-        resize() {
+    /**
+     * Resize the game to fit the window.
+     */
+    resize() {
         const width = window.innerWidth * window.devicePixelRatio;
         const height = window.innerHeight * window.devicePixelRatio;
 
@@ -102,6 +108,8 @@ export default class Main extends Phaser.State {
      * Handle actions in the main game loop.
      */
     update() {
+        // update game speed
+        this.speed = this.speed + 0.01;
         // Check collisions
         if (this.game.physics.arcade.collide(this.player, this.groundArray)) {
             this.player.hasGrounded = true; // Player has landed on the ground
@@ -109,12 +117,19 @@ export default class Main extends Phaser.State {
 
         // Update clouds
         for (let i = 0; i < this.cloudArray.length; i++) {
+            this.cloudArray[i].speed = this.speed;
             this.cloudArray[i].update();
         }
 
         // Update ground
         for (let i = 0; i < this.groundArray.length; i++) {
-            this.groundArray[i].update();
+            this.groundArray[i].speed = this.speed;
+            this.groundArray[i].update(this.speed);
+        }
+        
+        // Game over?
+        if(this.player.y < - 1000){
+            this.game.state.start('Icarus');
         }
     }
 }

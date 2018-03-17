@@ -10,6 +10,9 @@ const AssetManifest = {
     'startbtnp.png',
     'particles.png'
   ],
+  audio: [
+      'hill.mp3'
+  ],
   fonts: {
     google: {
       families: [

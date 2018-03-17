@@ -56,7 +56,7 @@ export default class Player extends Phaser.Sprite {
         this.jumpIndicator.clear();
         this.jumpIndicator.position.x = this.x;
         this.jumpIndicator.position.y = this.y;
-        this.jumpIndicator.beginFill(0x0088FF);
+        this.jumpIndicator.beginFill(0xFF6E40);
         this.jumpIndicator.drawCircle(0, 0, this.jumpPower);
         this.jumpIndicator.endFill();
 
