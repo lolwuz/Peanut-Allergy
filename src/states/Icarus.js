@@ -16,9 +16,9 @@ export default class Menu extends Phaser.State {
         this.text.setShadow(0, 0, 'rgba(0, 0, 0, 0.5)', 0);
 
     
-        const style = { font: 'bold 40pt Aria Black', fill: 'white', align: 'center', wordWrap: true, wordWrapWidth: 600 };
+        const style = { font: 'bold 30pt Aria Black', fill: 'white', align: 'center', wordWrap: true, wordWrapWidth: 600 };
 
-        this.text2 = game.add.text(game.world.centerX, 800, "... ignored his father's instructions not to fly too close to the sun; when the wax in his wings melted he tumbled out of the sky and fell into the sea where he drowned.", style);
+        this.text2 = game.add.text(game.world.centerX, 600, "... ignored his father's instructions not to fly too close to the sun; when the wax in his wings melted he tumbled out of the sky and fell into the sea where he drowned.", style);
         this.text2.anchor.set(0.5);
 
 
