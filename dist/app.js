@@ -1787,43 +1787,43 @@ var map = {
 	"./images/bg.png": 348,
 	"./images/bg@2x.png": 349,
 	"./images/bg@3x.png": 350,
-	"./images/heart.png": 386,
-	"./images/heart@2x.png": 388,
-	"./images/heart@3x.png": 387,
-	"./images/particles.png": 351,
-	"./images/particles@2x.png": 352,
-	"./images/peanut.png": 353,
-	"./images/peanut@2x.png": 354,
-	"./images/peanut@3x.png": 355,
-	"./images/peanut_butter.png": 356,
-	"./images/peanut_products_trans.png": 385,
-	"./images/startbtn.png": 357,
-	"./images/startbtn@2x.png": 358,
-	"./images/startbtn@3x.png": 359,
-	"./images/startbtnp.png": 360,
-	"./images/startbtnp@2x.png": 361,
-	"./images/startbtnp@3x.png": 362,
-	"./images/three.png": 363,
-	"./images/three@2x.png": 364,
-	"./images/three@3x.png": 365,
+	"./images/heart.png": 351,
+	"./images/heart@2x.png": 352,
+	"./images/heart@3x.png": 353,
+	"./images/particles.png": 354,
+	"./images/particles@2x.png": 355,
+	"./images/peanut.png": 356,
+	"./images/peanut@2x.png": 357,
+	"./images/peanut@3x.png": 358,
+	"./images/peanut_butter.png": 359,
+	"./images/peanut_products_trans.png": 360,
+	"./images/startbtn.png": 361,
+	"./images/startbtn@2x.png": 362,
+	"./images/startbtn@3x.png": 363,
+	"./images/startbtnp.png": 364,
+	"./images/startbtnp@2x.png": 365,
+	"./images/startbtnp@3x.png": 366,
+	"./images/three.png": 367,
+	"./images/three@2x.png": 368,
+	"./images/three@3x.png": 369,
 	"./sprites/p": 92,
 	"./sprites/p.json": 92,
-	"./sprites/p.png": 366,
+	"./sprites/p.png": 370,
 	"./sprites/p@2x": 93,
 	"./sprites/p@2x.json": 93,
-	"./sprites/p@2x.png": 367,
+	"./sprites/p@2x.png": 371,
 	"./sprites/p@3x": 94,
 	"./sprites/p@3x.json": 94,
-	"./sprites/p@3x.png": 368,
+	"./sprites/p@3x.png": 372,
 	"./sprites/particles": 95,
 	"./sprites/particles.json": 95,
-	"./sprites/particles.png": 369,
+	"./sprites/particles.png": 373,
 	"./sprites/particles@2x": 96,
 	"./sprites/particles@2x.json": 96,
-	"./sprites/particles@2x.png": 370,
+	"./sprites/particles@2x.png": 374,
 	"./sprites/textures": 97,
 	"./sprites/textures.json": 97,
-	"./sprites/textures.png": 371,
+	"./sprites/textures.png": 375,
 	"./sprites/textures.pvrtc": 98,
 	"./sprites/textures.pvrtc.json": 98,
 	"./sprites/textures.pvrtc.pvr": 141,
@@ -1832,13 +1832,13 @@ var map = {
 	"./sprites/textures.s3tc.pvr": 142,
 	"./sprites/textures@2x": 100,
 	"./sprites/textures@2x.json": 100,
-	"./sprites/textures@2x.png": 372,
+	"./sprites/textures@2x.png": 376,
 	"./sprites/textures@2x.pvrtc": 101,
 	"./sprites/textures@2x.pvrtc.json": 101,
 	"./sprites/textures@2x.pvrtc.pvr": 143,
 	"./sprites/textures@3x": 102,
 	"./sprites/textures@3x.json": 102,
-	"./sprites/textures@3x.png": 373
+	"./sprites/textures@3x.png": 377
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -4030,11 +4030,11 @@ var src_WebpackLoader = (function (superclass) {
     } catch (e) {}
 
     try {
-      formats.pvrtc = __webpack_require__(374)("./" + dir + name + (this.postfix) + ".pvrtc.pvr");
+      formats.pvrtc = __webpack_require__(378)("./" + dir + name + (this.postfix) + ".pvrtc.pvr");
     } catch (e) {}
 
     try {
-      formats.s3tc = __webpack_require__(375)("./" + dir + name + (this.postfix) + ".s3tc.pvr");
+      formats.s3tc = __webpack_require__(379)("./" + dir + name + (this.postfix) + ".s3tc.pvr");
     } catch (e) {}
 
     try {
@@ -4149,7 +4149,7 @@ var Preload_Preload = (function (superclass) {
 /* harmony default export */ var states_Preload = (Preload_Preload);
 
 // EXTERNAL MODULE: ./node_modules/lodash.throttle/index.js
-var lodash_throttle = __webpack_require__(378);
+var lodash_throttle = __webpack_require__(382);
 var lodash_throttle_default = /*#__PURE__*/__webpack_require__.n(lodash_throttle);
 
 // CONCATENATED MODULE: ./src/objects/Player.js
@@ -9296,142 +9296,166 @@ module.exports = __webpack_require__.p + "assets/bg@3x.png?76a15e6b4aa55ff708f4d
 /* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/particles.png?8cc5bfc3539734415af39ca4508c78af";
+module.exports = __webpack_require__.p + "assets/heart.png?c24e62732bafe1bd47d3efe6b58a1e50";
 
 /***/ }),
 /* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/particles@2x.png?8cc5bfc3539734415af39ca4508c78af";
+module.exports = __webpack_require__.p + "assets/heart@2x.png?59dd6041c3fd4b623778f24210b77601";
 
 /***/ }),
 /* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/peanut.png?49b6647df7e965b81528d87897a25844";
+module.exports = __webpack_require__.p + "assets/heart@3x.png?fcd0300deb4fd92735c20a6ea91ec1ca";
 
 /***/ }),
 /* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/peanut@2x.png?348faddec80836b587e7d069a8b2b818";
+module.exports = __webpack_require__.p + "assets/particles.png?8cc5bfc3539734415af39ca4508c78af";
 
 /***/ }),
 /* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/peanut@3x.png?a19c18c200f335b7a157bd95c7858316";
+module.exports = __webpack_require__.p + "assets/particles@2x.png?8cc5bfc3539734415af39ca4508c78af";
 
 /***/ }),
 /* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/peanut_butter.png?495c37c254375843b186c64fb40a31e9";
+module.exports = __webpack_require__.p + "assets/peanut.png?49b6647df7e965b81528d87897a25844";
 
 /***/ }),
 /* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtn.png?e254249db67a8d2e9525a54f59ab93e7";
+module.exports = __webpack_require__.p + "assets/peanut@2x.png?348faddec80836b587e7d069a8b2b818";
 
 /***/ }),
 /* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtn@2x.png?e254249db67a8d2e9525a54f59ab93e7";
+module.exports = __webpack_require__.p + "assets/peanut@3x.png?a19c18c200f335b7a157bd95c7858316";
 
 /***/ }),
 /* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtn@3x.png?e254249db67a8d2e9525a54f59ab93e7";
+module.exports = __webpack_require__.p + "assets/peanut_butter.png?495c37c254375843b186c64fb40a31e9";
 
 /***/ }),
 /* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtnp.png?c02f75cab0e43342f1e4ab4ed46f623a";
+module.exports = __webpack_require__.p + "assets/peanut_products_trans.png?6f77102bd861e0108bd1385a19f7475c";
 
 /***/ }),
 /* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtnp@2x.png?c02f75cab0e43342f1e4ab4ed46f623a";
+module.exports = __webpack_require__.p + "assets/startbtn.png?e254249db67a8d2e9525a54f59ab93e7";
 
 /***/ }),
 /* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtnp@3x.png?c02f75cab0e43342f1e4ab4ed46f623a";
+module.exports = __webpack_require__.p + "assets/startbtn@2x.png?e254249db67a8d2e9525a54f59ab93e7";
 
 /***/ }),
 /* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/three.png?89eddbe46b5f9b6c6733f75eee786253";
+module.exports = __webpack_require__.p + "assets/startbtn@3x.png?e254249db67a8d2e9525a54f59ab93e7";
 
 /***/ }),
 /* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/three@2x.png?278fbe9ad03ca50eb5151acc299f60f5";
+module.exports = __webpack_require__.p + "assets/startbtnp.png?c02f75cab0e43342f1e4ab4ed46f623a";
 
 /***/ }),
 /* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/three@3x.png?6d786bdce1b101804fa24970ed8b6908";
+module.exports = __webpack_require__.p + "assets/startbtnp@2x.png?c02f75cab0e43342f1e4ab4ed46f623a";
 
 /***/ }),
 /* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/p.png?d7c5fea247b12c853e37c458458fffc6";
+module.exports = __webpack_require__.p + "assets/startbtnp@3x.png?c02f75cab0e43342f1e4ab4ed46f623a";
 
 /***/ }),
 /* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/p@2x.png?ec722db6787d08013ca373bf0251053b";
+module.exports = __webpack_require__.p + "assets/three.png?89eddbe46b5f9b6c6733f75eee786253";
 
 /***/ }),
 /* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/p@3x.png?d7c5fea247b12c853e37c458458fffc6";
+module.exports = __webpack_require__.p + "assets/three@2x.png?278fbe9ad03ca50eb5151acc299f60f5";
 
 /***/ }),
 /* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/particles.png?8cc5bfc3539734415af39ca4508c78af";
+module.exports = __webpack_require__.p + "assets/three@3x.png?6d786bdce1b101804fa24970ed8b6908";
 
 /***/ }),
 /* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/particles@2x.png?8cc5bfc3539734415af39ca4508c78af";
+module.exports = __webpack_require__.p + "assets/p.png?d7c5fea247b12c853e37c458458fffc6";
 
 /***/ }),
 /* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/textures.png?70c869459c316a1f3ea58be1b3c87577";
+module.exports = __webpack_require__.p + "assets/p@2x.png?ec722db6787d08013ca373bf0251053b";
 
 /***/ }),
 /* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/textures@2x.png?1fdc1270a1b3c0a2f57fb8850f5ea119";
+module.exports = __webpack_require__.p + "assets/p@3x.png?d7c5fea247b12c853e37c458458fffc6";
 
 /***/ }),
 /* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/textures@3x.png?d3ead365821e0d694054609a12f3ed2e";
+module.exports = __webpack_require__.p + "assets/particles.png?8cc5bfc3539734415af39ca4508c78af";
 
 /***/ }),
 /* 374 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/particles@2x.png?8cc5bfc3539734415af39ca4508c78af";
+
+/***/ }),
+/* 375 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/textures.png?70c869459c316a1f3ea58be1b3c87577";
+
+/***/ }),
+/* 376 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/textures@2x.png?1fdc1270a1b3c0a2f57fb8850f5ea119";
+
+/***/ }),
+/* 377 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/textures@3x.png?d3ead365821e0d694054609a12f3ed2e";
+
+/***/ }),
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -9452,10 +9476,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 374;
+webpackContext.id = 378;
 
 /***/ }),
-/* 375 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -9475,10 +9499,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 375;
+webpackContext.id = 379;
 
 /***/ }),
-/* 376 */
+/* 380 */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9487,10 +9511,10 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 376;
+webpackEmptyContext.id = 380;
 
 /***/ }),
-/* 377 */
+/* 381 */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9499,10 +9523,10 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 377;
+webpackEmptyContext.id = 381;
 
 /***/ }),
-/* 378 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -9947,36 +9971,6 @@ module.exports = throttle;
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(63)))
 
-/***/ }),
-/* 379 */,
-/* 380 */,
-/* 381 */,
-/* 382 */,
-/* 383 */,
-/* 384 */,
-/* 385 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/peanut_products_trans.png?67f000e43cfb3098e975d54c0636a5e8";
-
-/***/ }),
-/* 386 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/heart.png?c24e62732bafe1bd47d3efe6b58a1e50";
-
-/***/ }),
-/* 387 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/heart@3x.png?fcd0300deb4fd92735c20a6ea91ec1ca";
-
-/***/ }),
-/* 388 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/heart@2x.png?59dd6041c3fd4b623778f24210b77601";
-
 /***/ })
 ],[144]);
-//# sourceMappingURL=app.js.map?54c1ae57e18e2471a971
+//# sourceMappingURL=app.js.map?d097392847b6269c58be

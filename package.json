@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "core-js": "2.5.3",
+    "gulp": "^3.9.1",
     "howler": "2.0.7",
     "lodash.throttle": "^4.1.1",
     "phaser-ce": "^2.10.1",

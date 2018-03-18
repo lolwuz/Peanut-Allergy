@@ -1,24 +1,12 @@
-# Phaser ES6 Boilerplate
+# Peanut-Allergy
 
-This is an ES6-based boilerplate for creating a multiplayer game using Phaser and Webpack. It is very opinionated as it strips out various unneeded components from Phaser and uses howler.js rather than Phaser Audio.
+ES6 Phaser 2D game with a focus on Game Mechanics. 
 
-The purpose of this repo is to be a starting point for creating a game. The idea is to copy the contents and then modify from there. Look at the usage below for instructions on how it all works.
+## Contributors
+* [Koen Lukkien](https://github.com/Koenzk)
+* [Marten Hoekstra](https://github.com/lolwuz)
 
-## Features
-* [Phaser-CE](https://github.com/photonstorm/phaser-ce) through npm (automatic custom build).
-* Boilerplate written in ES6 class structure.
-* Heavily commented and stripped down for most minimal build.
-* [Webpack](https://webpack.js.org/) + [Bublé](https://buble.surge.sh/guide/) + [PostCSS](http://postcss.org/).
-* [BrowserSync](https://browsersync.io/) for livereload during development.
-* [Stats.js](https://github.com/mrdoob/stats.js/) for displaying FPS/MS.
-* [phaser-manifest-loader](https://github.com/mattcolman/phaser-manifest-loader) for easy asset loading.
-* Separate builds for production and development.
-
-## Usage
-
-Clone the git repo.
-
-`git@github.com:goldfire/phaser-boilerplate.git`
+## Build an run
 
 Install the dependencies.
 
@@ -28,8 +16,11 @@ Start the development web server.
 
 `npm run dev`
 
-Access your project in the browser.
+Access the game on your browser.
 
 `locahost:7777`
 
-Then start building your game!
+## Assigned by
+
+Job
+
