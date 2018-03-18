@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "fly.png",
+	"frame": {"x":0,"y":0,"w":1200,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1200,"h":800},
+	"sourceSize": {"w":1200,"h":800}
+},
+{
+	"filename": "stand.png",
+	"frame": {"x":0,"y":800,"w":1200,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1200,"h":800},
+	"sourceSize": {"w":1200,"h":800}
+},
+{
+	"filename": "walk1.png",
+	"frame": {"x":0,"y":1600,"w":1200,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1200,"h":800},
+	"sourceSize": {"w":1200,"h":800}
+},
+{
+	"filename": "walk2.png",
+	"frame": {"x":0,"y":2400,"w":1200,"h":800},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1200,"h":800},
+	"sourceSize": {"w":1200,"h":800}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "player@3x.png",
+	"format": "RGBA8888",
+	"size": {"w":1200,"h":3200},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:4b293e2ffb258ab19de2ceb38c1e0c58:a8389a9bb8b7fff7a2541f9d5d955958:fba70590bf6a635d6d3df72ed1ca33e7$"
+}
+}
