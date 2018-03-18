@@ -34,8 +34,8 @@ export default class Main extends Phaser.State {
             game: this.game,
             x: this.game.world.centerX,
             y: this.game.world.centerY,
-            key: "p",
-            frame: "pwalk.png"
+            key: 'player',
+            frame: 'fly.png'
         });
 
         this.player2 = new Phaser.Sprite(this.game, this.game.world.left, this.game.world.centerY, "p", "pwalk.png");
@@ -147,7 +147,7 @@ export default class Main extends Phaser.State {
         this.score.setScore(this.distance);
 
         if(this.player.y < - 1000){
-            this.game.state.start('Icarus');
+            this.game.state.start('Icarus', true, true);
         }
     }
 

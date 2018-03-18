@@ -2,6 +2,7 @@ const AssetManifest = {
   sprites: [
     'textures.png',
     'p.png',
+    'player.png',
     'particles.png'
   ],
   images: [
@@ -11,7 +12,7 @@ const AssetManifest = {
     'particles.png',
     'heart.png',
     'peanut.png',
-    'person.png'
+    'p2.png'
   ],
   fonts: {
     google: {

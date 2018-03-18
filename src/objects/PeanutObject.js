@@ -8,7 +8,7 @@ export default class PeanutObject extends Phaser.Sprite{
         this.body.allowGravity = false;
         this.body.immovable = true;
         this.body.onCollide = new Phaser.Signal();
-        this.body.onCollide.add(this.onCollide.bind(this));
+        this.body.onCollide.add(this.onCollide, this);
 
         this.game.add.existing(this);
     }

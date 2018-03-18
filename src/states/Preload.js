@@ -22,7 +22,9 @@ export default class Preload extends Phaser.State {
         this.game.load.maxParallelDownloads = Infinity;
 
         // Begin loading all of the assets.
-        this.game.plugins.add(WebpackLoader, AssetManifest, postfix)
+        this.game.plugins.add(WebpackLoader, AssetManifest, postfix,  (log) => {
+            console.log("Asset loaded " + log);
+        })
             .load()
             .then(() => {
             this.game.state.start('Menu');

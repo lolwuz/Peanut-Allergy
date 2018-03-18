@@ -34,7 +34,7 @@ export default class Score {
         this.lives = this.lives + number;
 
         if(this.lives <= 0){
-            this.game.state.start('Main');
+            this.game.state.start('Main', true, false);
         }
 
         if(number < 0){
