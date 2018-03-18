@@ -1,0 +1,100 @@
+{"frames": [
+
+{
+	"filename": "1.png",
+	"frame": {"x":0,"y":0,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "2.png",
+	"frame": {"x":225,"y":0,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "3.png",
+	"frame": {"x":0,"y":250,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "4.png",
+	"frame": {"x":225,"y":250,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "5.png",
+	"frame": {"x":0,"y":500,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "6.png",
+	"frame": {"x":225,"y":500,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "7.png",
+	"frame": {"x":0,"y":750,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "9.png",
+	"frame": {"x":225,"y":750,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "10.png",
+	"frame": {"x":0,"y":1000,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "11.png",
+	"frame": {"x":225,"y":1000,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+},
+{
+	"filename": "12.png",
+	"frame": {"x":0,"y":1250,"w":225,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":250},
+	"sourceSize": {"w":225,"h":250}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "peanut_products@2x.png",
+	"format": "RGBA8888",
+	"size": {"w":450,"h":1500},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e6062df4c3b4ce9733b497a1d9a9f2aa:e41ba34f689aab001f1029155fdcf259:66613ec8cd6cdf991df331bc86bd1d3a$"
+}
+}
