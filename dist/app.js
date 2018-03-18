@@ -1797,33 +1797,34 @@ var map = {
 	"./images/peanut@3x.png": 358,
 	"./images/peanut_butter.png": 359,
 	"./images/peanut_products_trans.png": 360,
-	"./images/startbtn.png": 361,
-	"./images/startbtn@2x.png": 362,
-	"./images/startbtn@3x.png": 363,
-	"./images/startbtnp.png": 364,
-	"./images/startbtnp@2x.png": 365,
-	"./images/startbtnp@3x.png": 366,
-	"./images/three.png": 367,
-	"./images/three@2x.png": 368,
-	"./images/three@3x.png": 369,
+	"./images/person.png": 361,
+	"./images/startbtn.png": 362,
+	"./images/startbtn@2x.png": 363,
+	"./images/startbtn@3x.png": 364,
+	"./images/startbtnp.png": 365,
+	"./images/startbtnp@2x.png": 366,
+	"./images/startbtnp@3x.png": 367,
+	"./images/three.png": 368,
+	"./images/three@2x.png": 369,
+	"./images/three@3x.png": 370,
 	"./sprites/p": 92,
 	"./sprites/p.json": 92,
-	"./sprites/p.png": 370,
+	"./sprites/p.png": 371,
 	"./sprites/p@2x": 93,
 	"./sprites/p@2x.json": 93,
-	"./sprites/p@2x.png": 371,
+	"./sprites/p@2x.png": 372,
 	"./sprites/p@3x": 94,
 	"./sprites/p@3x.json": 94,
-	"./sprites/p@3x.png": 372,
+	"./sprites/p@3x.png": 373,
 	"./sprites/particles": 95,
 	"./sprites/particles.json": 95,
-	"./sprites/particles.png": 373,
+	"./sprites/particles.png": 374,
 	"./sprites/particles@2x": 96,
 	"./sprites/particles@2x.json": 96,
-	"./sprites/particles@2x.png": 374,
+	"./sprites/particles@2x.png": 375,
 	"./sprites/textures": 97,
 	"./sprites/textures.json": 97,
-	"./sprites/textures.png": 375,
+	"./sprites/textures.png": 376,
 	"./sprites/textures.pvrtc": 98,
 	"./sprites/textures.pvrtc.json": 98,
 	"./sprites/textures.pvrtc.pvr": 141,
@@ -1832,13 +1833,13 @@ var map = {
 	"./sprites/textures.s3tc.pvr": 142,
 	"./sprites/textures@2x": 100,
 	"./sprites/textures@2x.json": 100,
-	"./sprites/textures@2x.png": 376,
+	"./sprites/textures@2x.png": 377,
 	"./sprites/textures@2x.pvrtc": 101,
 	"./sprites/textures@2x.pvrtc.json": 101,
 	"./sprites/textures@2x.pvrtc.pvr": 143,
 	"./sprites/textures@3x": 102,
 	"./sprites/textures@3x.json": 102,
-	"./sprites/textures@3x.png": 377
+	"./sprites/textures@3x.png": 378
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -4030,11 +4031,11 @@ var src_WebpackLoader = (function (superclass) {
     } catch (e) {}
 
     try {
-      formats.pvrtc = __webpack_require__(378)("./" + dir + name + (this.postfix) + ".pvrtc.pvr");
+      formats.pvrtc = __webpack_require__(379)("./" + dir + name + (this.postfix) + ".pvrtc.pvr");
     } catch (e) {}
 
     try {
-      formats.s3tc = __webpack_require__(379)("./" + dir + name + (this.postfix) + ".s3tc.pvr");
+      formats.s3tc = __webpack_require__(380)("./" + dir + name + (this.postfix) + ".s3tc.pvr");
     } catch (e) {}
 
     try {
@@ -4085,7 +4086,9 @@ var AssetManifest = {
     'startbtn.png',
     'startbtnp.png',
     'particles.png',
-    'heart.png'
+    'heart.png',
+    'peanut.png',
+    'person.png'
   ],
   fonts: {
     google: {
@@ -4149,7 +4152,7 @@ var Preload_Preload = (function (superclass) {
 /* harmony default export */ var states_Preload = (Preload_Preload);
 
 // EXTERNAL MODULE: ./node_modules/lodash.throttle/index.js
-var lodash_throttle = __webpack_require__(382);
+var lodash_throttle = __webpack_require__(383);
 var lodash_throttle_default = /*#__PURE__*/__webpack_require__.n(lodash_throttle);
 
 // CONCATENATED MODULE: ./src/objects/Player.js
@@ -4179,21 +4182,8 @@ var Player = (function (superclass) {
         this.jumpIndicator = new Phaser.Graphics(this.game, this.x, this.y);
         this.game.add.existing(this.jumpIndicator);
 
-        // Emitter
-        this.emitter = this.game.add.emitter(40, 80, 1000);
-        this.emitter.makeParticles('particles');
-
-        this.emitter.minParticleSpeed.setTo(-1000, 0);
-        this.emitter.maxParticleSpeed.setTo(-800, 0);
-        this.emitter.minParticleScale = 0.5;
-        this.emitter.maxParticleScale = 0.4;
-        this.emitter.gravity = 150;
-        this.emitter.bounce.setTo(0.5, 0.5);
-        this.emitter.angularDrag = 0;
-
         // Add the sprite to the game.
         this.game.add.existing(this);
-        this.game.physics.enable(this.emitter, Phaser.Physics.ARCADE);
         this.game.physics.enable(this, Phaser.Physics.ARCADE);
         this.body.bounce.y = 0.1;
         this.anchor.setTo(0.5);
@@ -4226,10 +4216,6 @@ var Player = (function (superclass) {
         this.jumpIndicator.drawCircle(0, 0, this.jumpPower);
         this.jumpIndicator.endFill();
 
-        // Update emitter
-        this.emitter.position.x = this.x;
-        this.emitter.position.y = this.y;
-
         if(mouse.rightButton.isDown){
             this.frameName = 'pduck.png';
         }
@@ -4243,7 +4229,6 @@ var Player = (function (superclass) {
             this.hasGrounded = false;
             this.body.velocity.y = -this.jumpPower; 
             this.jumpPower = 0;
-            this.emitter.start(false, 5000, 20);
         }
     };
 
@@ -4322,7 +4307,49 @@ var Ground = (function (superclass) {
 }(Phaser.Graphics));
 
 /* harmony default export */ var objects_Ground = (Ground);
+// CONCATENATED MODULE: ./src/objects/PeanutObject.js
+var PeanutObject = (function (superclass) {
+    function PeanutObject(ref){
+        var game = ref.game;
+        var x = ref.x;
+        var y = ref.y;
+        var key = ref.key;
+        var speed = ref.speed;
+
+        superclass.call(this, game, x, y, key);
+        this.speed = speed;
+        this.anchor.set(0.5);
+        
+        this.game.physics.enable(this, Phaser.Physics.ARCADE);
+        this.body.allowGravity = false;
+        this.body.immovable = true;
+        this.body.onCollide = new Phaser.Signal();
+        this.body.onCollide.add(this.onCollide.bind(this));
+
+        this.game.add.existing(this);
+    }
+
+    if ( superclass ) PeanutObject.__proto__ = superclass;
+    PeanutObject.prototype = Object.create( superclass && superclass.prototype );
+    PeanutObject.prototype.constructor = PeanutObject;
+
+    PeanutObject.prototype.update = function update (){
+        this.angle--;
+        this.x = this.x - this.speed;
+    };
+
+    PeanutObject.prototype.onCollide = function onCollide (){
+        this.destroy();
+    };
+
+    return PeanutObject;
+}(Phaser.Sprite));
+
+/* harmony default export */ var objects_PeanutObject = (PeanutObject);
 // CONCATENATED MODULE: ./src/objects/Score.js
+/**
+ * Class for keeping and updating score.
+ */
 var Score = function Score(ref){
     var this$1 = this;
     var game = ref.game;
@@ -4330,14 +4357,24 @@ var Score = function Score(ref){
     this.game = game;
     this.lives = 3;
     this.gameScore = 0;
+    this.heartArray = [];
 
     // Foreach live print a heart 
     for(var i = 0; i < this.lives; i++){
         var image = new Phaser.Image(this$1.game, this$1.game.world.bounds.topLeft.x, this$1.game.world.bounds.topLeft.y, "heart");
         image.x = image.width * i;
             
+        this$1.heartArray.push(image);
         this$1.game.add.existing(image);
     }
+
+    // Print gamescore
+    this.gameScoreText = game.add.text(this.game.world.bounds.topLeft.x + 100, this.game.world.bounds.topLeft.y + this.heartArray[0].height, this.gameScore,{
+        font: "30px Arial",
+        fill: "ffffff",
+        alignm: "center"
+    });
+    this.gameScoreText.anchor.setTo(0.5, 0.5);
 };
 
 Score.prototype.getLives = function getLives (){
@@ -4346,10 +4383,29 @@ Score.prototype.getLives = function getLives (){
 
 Score.prototype.setLives = function setLives (number){
     this.lives = this.lives + number;
+
+    if(this.lives <= 0){
+        this.game.state.start('Main');
+    }
+
+    if(number < 0){
+        this.heartArray.pop().destroy();
+    } else {
+        var image = new Phaser.Image(this.game, this.game.world.bounds.topLeft.x, this.game.world.bounds.topLeft.y, "heart");
+        image.x = image.width * this.heartArray.length;
+        this.heartArray.push();
+        this.game.add.existing(image);
+    }
+};
+
+Score.prototype.setScore = function setScore (distance){
+    this.gameScore = Math.round(distance / 1000);
+    this.gameScoreText.setText(this.gameScore);
 };
 
 /* harmony default export */ var objects_Score = (Score);
 // CONCATENATED MODULE: ./src/states/Main.js
+
 
 
 
@@ -4369,17 +4425,21 @@ var Main_Main = (function (superclass) {
     Main.prototype.constructor = Main;
 
     Main.prototype.create = function create () {
-        // Enable arcade physics.
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
-        // Enable cursor input
-        this.game.input.mouse.capture = true;
-        // Add background tile.
-        this.game.stage.setBackgroundColor("#40C4FF");
-       
+        this.cloudArray = [];
+        this.groundArray = [];
+        this.obstracleArray = [];
 
-        // Starting speed
-        this.speed = 4;
-        this.score = new objects_Score({game: this.game});
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);  // Enable arcade physics.
+        this.game.input.mouse.capture = true; // Enable cursor input
+        this.game.stage.setBackgroundColor("#40C4FF");  // Add background color
+       
+        this.speed = 4; // Starting speed
+        this.score = new objects_Score({game: this.game}); // Game score object 
+        this.distance = 0; // Distance runned.
+        this.spawnGroundDistance = 1000; // Runned distance between each ground spawn 
+        this.spawnObstacleDistance = 750; // Runed distance between each Obstacle spawn
+        this.nextGroundSpawnDistance = this.distance + this.spawnGroundDistance;
+        this.nextObstacleSpawnDistance = this.distance + this.spawnObstacleDistance;
         
         // Add a player to the game.
         this.player = new objects_Player({
@@ -4390,17 +4450,16 @@ var Main_Main = (function (superclass) {
             frame: "pwalk.png"
         });
 
-        this.player2 = new Phaser.Sprite(this.game, this.game.world.centerX - 200, this.game.world.centerY, "p", "pwalk.png");
+        this.player2 = new Phaser.Sprite(this.game, this.game.world.left, this.game.world.centerY, "p", "pwalk.png");
         this.game.add.existing(this.player2);
         this.game.physics.enable(this.player2, Phaser.Physics.ARCADE);
         this.player2.body.bounce.y = 0.1;
         this.player2.anchor.setTo(0.5);
         
         // Add Physics to player
-        this.game.physics.arcade.gravity.y = 1000;
+        this.game.physics.arcade.gravity.y = 1400;
 
         // Clouds
-        this.cloudArray = [];
         this.game.time.events.repeat(
             Phaser.Timer.SECOND * 6,
             10,
@@ -4409,26 +4468,109 @@ var Main_Main = (function (superclass) {
         );
 
         // Ground
-        this.groundArray = [];
         var startGround = new objects_Ground({
             // Start ground
             game: this.game,
             x: this.game.world.centerX,
             y: this.game.world.centerY + 300 * window.devicePixelRatio,
-            width: this.game.world.width * 2,
+            width: this.game.world.width * 3,
             height: this.game.height / 2,
             speed: 4,
             spawnGround: this.spawGround
         });
         this.groundArray.push(startGround);
-
-
+    
         // Setup listener for window resize.
         window.addEventListener(
             "resize",
             lodash_throttle_default()(this.resize.bind(this), 50),
             false
         );
+    };
+
+    /**
+     * Handle actions in the main game loop.
+     */
+    Main.prototype.update = function update () {
+        var this$1 = this;
+
+        // Update gamespeed
+        this.speed = this.speed + 0.001;
+        this.distance += this.speed;
+    
+        if(this.distance > this.nextGroundSpawnDistance){
+            this.nextGroundSpawnDistance += this.spawnGroundDistance;
+            this.spawnGround();
+        }
+
+        if(this.distance > this.nextObstacleSpawnDistance){
+            this.nextObstacleSpawnDistance += this.spawnObstacleDistance;
+            this.spawnObstacle();
+        }
+
+        // Check collisions
+        if (this.game.physics.arcade.collide(this.player, this.groundArray)) {
+            this.player.hasGrounded = true; // Player has landed on the ground
+        }
+
+        this.game.physics.arcade.collide(this.player, this.groundArray);
+        this.game.physics.arcade.collide(this.player2, this.obstracleArray);
+        this.game.physics.arcade.collide(this.player2, this.groundArray);
+        if(this.game.physics.arcade.collide(this.player, this.obstracleArray)){
+            this.score.setLives(-1);
+        }
+
+        var target = new Phaser.Point(this.player.x, this.player.y).add(-200, 0);
+        this.game.physics.arcade.moveToObject(this.player2, target, 10, 100);
+
+        // Update clouds
+        for (var i = 0; i < this.cloudArray.length; i++) {
+            this$1.cloudArray[i].speed = this$1.speed;
+            this$1.cloudArray[i].update();
+        }
+
+        // Update ground
+        var firstGround = this.groundArray[0];
+        for (var i$1 = 0; i$1 < this.groundArray.length; i$1++) {
+            var ground = this$1.groundArray[i$1];
+            ground.speed = this$1.speed;
+            ground.update(this$1.speed);
+        }
+        
+        if(firstGround.x + firstGround.width < this.world.bounds.left){ 
+            this.groundArray.shift().destroy(); // Remove from the scene when not visible
+        }
+ 
+        // Update obstacles
+        var firstObstacle = this.obstracleArray[0] || {};
+        for(var i$2 = 0; i$2 < this.obstracleArray.length; i$2++){
+            var obstacle = this$1.obstracleArray[i$2];
+            obstacle.speed = this$1.speed;
+            obstacle.update();
+        }
+
+        if(firstObstacle.x + firstObstacle.width < this.world.bounds.left){
+            this.obstracleArray.shift().destroy(); // Remove from the scene when not visible
+        }
+
+        // Game over?
+        if(this.player.y > this.world.bounds.bottom){
+            this.lostLife();
+        }
+
+        this.score.setScore(this.distance);
+
+        if(this.player.y < - 1000){
+            this.game.state.start('Icarus');
+        }
+    };
+
+    /**
+     * Reset player when he lost his life
+     */
+    Main.prototype.lostLife = function lostLife (){
+        this.score.setLives(-1);
+        this.player.position.set(this.game.world.centerX, this.game.world.centerY);
     };
 
     /**
@@ -4447,11 +4589,26 @@ var Main_Main = (function (superclass) {
             game: this.game,
             x: this.game.world.centerX + this.game.world.width,
             y: this.game.world.centerY + 300 * window.devicePixelRatio,
-            width: Math.floor((Math.random() * 1400) + 1200) * window.devicePixelRatio,
+            width: Math.floor((Math.random() * 1300) + 1200) * window.devicePixelRatio,
             height: this.game.height / 2,
             speed: this.speed
         };
         this.groundArray.push(new objects_Ground(config));
+    };
+
+    /** 
+     * Spawn Obstacle
+     */
+    Main.prototype.spawnObstacle = function spawnObstacle (){
+        var spawnLevel = Math.floor((Math.random() * 3) + 1);
+        var config = {
+            game: this.game,
+            x: this.game.world.centerX + this.game.world.width,
+            y: this.game.world.centerY + (300 * window.devicePixelRatio) - this.player.height * spawnLevel,
+            key: 'peanut',
+            speed: this.speed
+        };
+        this.obstracleArray.push(new objects_PeanutObject(config));
     };
 
     /**
@@ -4462,63 +4619,6 @@ var Main_Main = (function (superclass) {
         var height = window.innerHeight * window.devicePixelRatio;
 
         this.scale.setGameSize(width, height);
-    };
-
-    /**
-     * Handle actions in the main game loop.
-     */
-    Main.prototype.update = function update () {
-        var this$1 = this;
-
-        // Update gamespeed
-        this.speed = this.speed + 0.001;
-
-        // Check collisions
-        if (this.game.physics.arcade.collide(this.player, this.groundArray)) {
-            this.player.hasGrounded = true; // Player has landed on the ground
-        }
-        this.game.physics.arcade.collide(this.player, this.groundArray);
-        this.game.physics.arcade.collide(this.player2, this.groundArray);
-
-        var target = new Phaser.Point(this.player.x, this.player.y).add(-200, 0);
-        this.game.physics.arcade.moveToObject(this.player2, target, this.speed, 100);
-
-        // Update clouds
-        for (var i = 0; i < this.cloudArray.length; i++) {
-            this$1.cloudArray[i].speed = this$1.speed;
-            this$1.cloudArray[i].update();
-        }
-
-        // Update ground
-        var lastGround = this.groundArray[this.groundArray.length - 1];
-        var firstGround = this.groundArray[0];
-
-        for (var i$1 = 0; i$1 < this.groundArray.length; i$1++) {
-            this$1.groundArray[i$1].speed = this$1.speed;
-            this$1.groundArray[i$1].update(this$1.speed);
-        }
-        
-        if(lastGround.x < this.world.centerX){
-            console.log("spawning new Ground");
-            this.spawnGround();
-        }
-        
-        if(firstGround.x + firstGround.width < this.world.bounds.left){
-            this.groundArray.shift().destroy();
-        }
- 
-        // Game over?
-        if(this.player.y > this.world.bounds.bottom){
-            this.score.setLives(-1);
-            // this.game.time.paused();
-        }
-
-        if(this.score.getLives() < 1){
-            // this.game.state.start('Icarus');
-        }
-        if(this.player.y < - 1000){
-            this.game.state.start('Icarus');
-        }
     };
 
     return Main;
@@ -4603,9 +4703,9 @@ var Icarus_Menu = (function (superclass) {
         this.text.setShadow(0, 0, 'rgba(0, 0, 0, 0.5)', 0);
 
     
-        var style = { font: 'bold 40pt Aria Black', fill: 'white', align: 'center', wordWrap: true, wordWrapWidth: 600 };
+        var style = { font: 'bold 30pt Aria Black', fill: 'white', align: 'center', wordWrap: true, wordWrapWidth: 600 };
 
-        this.text2 = game.add.text(game.world.centerX, 800, "... ignored his father's instructions not to fly too close to the sun; when the wax in his wings melted he tumbled out of the sky and fell into the sea where he drowned.", style);
+        this.text2 = game.add.text(game.world.centerX, 600, "... ignored his father's instructions not to fly too close to the sun; when the wax in his wings melted he tumbled out of the sky and fell into the sea where he drowned.", style);
         this.text2.anchor.set(0.5);
 
 
@@ -9356,106 +9456,112 @@ module.exports = __webpack_require__.p + "assets/peanut_products_trans.png?6f771
 /* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtn.png?e254249db67a8d2e9525a54f59ab93e7";
+module.exports = __webpack_require__.p + "assets/person.png?0132614c03e320611d03c40cad661332";
 
 /***/ }),
 /* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtn@2x.png?e254249db67a8d2e9525a54f59ab93e7";
+module.exports = __webpack_require__.p + "assets/startbtn.png?e254249db67a8d2e9525a54f59ab93e7";
 
 /***/ }),
 /* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtn@3x.png?e254249db67a8d2e9525a54f59ab93e7";
+module.exports = __webpack_require__.p + "assets/startbtn@2x.png?e254249db67a8d2e9525a54f59ab93e7";
 
 /***/ }),
 /* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtnp.png?c02f75cab0e43342f1e4ab4ed46f623a";
+module.exports = __webpack_require__.p + "assets/startbtn@3x.png?e254249db67a8d2e9525a54f59ab93e7";
 
 /***/ }),
 /* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtnp@2x.png?c02f75cab0e43342f1e4ab4ed46f623a";
+module.exports = __webpack_require__.p + "assets/startbtnp.png?c02f75cab0e43342f1e4ab4ed46f623a";
 
 /***/ }),
 /* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/startbtnp@3x.png?c02f75cab0e43342f1e4ab4ed46f623a";
+module.exports = __webpack_require__.p + "assets/startbtnp@2x.png?c02f75cab0e43342f1e4ab4ed46f623a";
 
 /***/ }),
 /* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/three.png?89eddbe46b5f9b6c6733f75eee786253";
+module.exports = __webpack_require__.p + "assets/startbtnp@3x.png?c02f75cab0e43342f1e4ab4ed46f623a";
 
 /***/ }),
 /* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/three@2x.png?278fbe9ad03ca50eb5151acc299f60f5";
+module.exports = __webpack_require__.p + "assets/three.png?89eddbe46b5f9b6c6733f75eee786253";
 
 /***/ }),
 /* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/three@3x.png?6d786bdce1b101804fa24970ed8b6908";
+module.exports = __webpack_require__.p + "assets/three@2x.png?278fbe9ad03ca50eb5151acc299f60f5";
 
 /***/ }),
 /* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/p.png?d7c5fea247b12c853e37c458458fffc6";
+module.exports = __webpack_require__.p + "assets/three@3x.png?6d786bdce1b101804fa24970ed8b6908";
 
 /***/ }),
 /* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/p@2x.png?ec722db6787d08013ca373bf0251053b";
+module.exports = __webpack_require__.p + "assets/p.png?d7c5fea247b12c853e37c458458fffc6";
 
 /***/ }),
 /* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/p@3x.png?d7c5fea247b12c853e37c458458fffc6";
+module.exports = __webpack_require__.p + "assets/p@2x.png?ec722db6787d08013ca373bf0251053b";
 
 /***/ }),
 /* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/particles.png?8cc5bfc3539734415af39ca4508c78af";
+module.exports = __webpack_require__.p + "assets/p@3x.png?d7c5fea247b12c853e37c458458fffc6";
 
 /***/ }),
 /* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/particles@2x.png?8cc5bfc3539734415af39ca4508c78af";
+module.exports = __webpack_require__.p + "assets/particles.png?8cc5bfc3539734415af39ca4508c78af";
 
 /***/ }),
 /* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/textures.png?70c869459c316a1f3ea58be1b3c87577";
+module.exports = __webpack_require__.p + "assets/particles@2x.png?8cc5bfc3539734415af39ca4508c78af";
 
 /***/ }),
 /* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/textures@2x.png?1fdc1270a1b3c0a2f57fb8850f5ea119";
+module.exports = __webpack_require__.p + "assets/textures.png?70c869459c316a1f3ea58be1b3c87577";
 
 /***/ }),
 /* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/textures@3x.png?d3ead365821e0d694054609a12f3ed2e";
+module.exports = __webpack_require__.p + "assets/textures@2x.png?1fdc1270a1b3c0a2f57fb8850f5ea119";
 
 /***/ }),
 /* 378 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/textures@3x.png?d3ead365821e0d694054609a12f3ed2e";
+
+/***/ }),
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -9476,10 +9582,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 378;
+webpackContext.id = 379;
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -9499,19 +9605,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 379;
-
-/***/ }),
-/* 380 */
-/***/ (function(module, exports) {
-
-function webpackEmptyContext(req) {
-	throw new Error("Cannot find module '" + req + "'.");
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 380;
+webpackContext.id = 380;
 
 /***/ }),
 /* 381 */
@@ -9527,6 +9621,18 @@ webpackEmptyContext.id = 381;
 
 /***/ }),
 /* 382 */
+/***/ (function(module, exports) {
+
+function webpackEmptyContext(req) {
+	throw new Error("Cannot find module '" + req + "'.");
+}
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = 382;
+
+/***/ }),
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -9973,4 +10079,4 @@ module.exports = throttle;
 
 /***/ })
 ],[144]);
-//# sourceMappingURL=app.js.map?d097392847b6269c58be
+//# sourceMappingURL=app.js.map?e1c016df3374d71151df

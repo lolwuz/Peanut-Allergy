@@ -18,21 +18,8 @@ export default class Player extends Phaser.Sprite {
         this.jumpIndicator = new Phaser.Graphics(this.game, this.x, this.y);
         this.game.add.existing(this.jumpIndicator);
 
-        // Emitter
-        this.emitter = this.game.add.emitter(40, 80, 1000);
-        this.emitter.makeParticles('particles');
-
-        this.emitter.minParticleSpeed.setTo(-1000, 0);
-        this.emitter.maxParticleSpeed.setTo(-800, 0);
-        this.emitter.minParticleScale = 0.5;
-        this.emitter.maxParticleScale = 0.4;
-        this.emitter.gravity = 150;
-        this.emitter.bounce.setTo(0.5, 0.5);
-        this.emitter.angularDrag = 0;
-
         // Add the sprite to the game.
         this.game.add.existing(this);
-        this.game.physics.enable(this.emitter, Phaser.Physics.ARCADE);
         this.game.physics.enable(this, Phaser.Physics.ARCADE);
         this.body.bounce.y = 0.1;
         this.anchor.setTo(0.5);
@@ -61,10 +48,6 @@ export default class Player extends Phaser.Sprite {
         this.jumpIndicator.drawCircle(0, 0, this.jumpPower);
         this.jumpIndicator.endFill();
 
-        // Update emitter
-        this.emitter.position.x = this.x;
-        this.emitter.position.y = this.y;
-
         if(mouse.rightButton.isDown){
             this.frameName = 'pduck.png';
         }
@@ -78,7 +61,6 @@ export default class Player extends Phaser.Sprite {
             this.hasGrounded = false;
             this.body.velocity.y = -this.jumpPower; 
             this.jumpPower = 0;
-            this.emitter.start(false, 5000, 20);
         }
     }
 }
