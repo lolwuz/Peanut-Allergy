@@ -5,8 +5,8 @@ export default class Player extends Phaser.Sprite {
     constructor({ game, x, y, key, frame }) {
         super(game, x, y, key);
         // Add walk animation
-        // this.walkAnimation = this.animations.add('walk', 14, true);
-        // this.animations.play('walk');
+        this.walkAnimation = this.animations.add('walk', [2, 1, 3, 1], 10, true);
+        this.animations.play('walk');
 
         // Player
         this.isAlive = true;
@@ -43,7 +43,7 @@ export default class Player extends Phaser.Sprite {
 
         if (mouse.leftButton.isDown) {
             this.wasDown = true;
-            this.jumpPower = this.jumpPower + 40; // Set up velocity for the jump
+            this.jumpPower = this.jumpPower + 50; // Set up velocity for the jump
         } else {
             this.jumpPower = 0;
         }
@@ -57,7 +57,7 @@ export default class Player extends Phaser.Sprite {
         this.jumpIndicator.endFill();
 
         if(mouse.rightButton.isDown){
-            // this.frameName = 'pduck.png';
+            this.frameName = 'fly.png';
         }
     }
 }

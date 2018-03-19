@@ -1,6 +1,6 @@
 export default class PeanutObject extends Phaser.Sprite{
-    constructor({ game, x, y, key, speed }){
-        super(game, x, y, key);
+    constructor({ game, x, y, key, frame, speed }){
+        super(game, x, y, key, frame);
         this.speed = speed;
         this.anchor.set(0.5);
         

@@ -3,16 +3,15 @@ const AssetManifest = {
     'textures.png',
     'p.png',
     'player.png',
-    'particles.png'
+    'particles.png',
+    'peanut_products.png'
   ],
   images: [
     'bg.png',
     'startbtn.png',
     'startbtnp.png',
     'particles.png',
-    'heart.png',
-    'peanut.png',
-    'p2.png'
+    'heart.png'
   ],
   fonts: {
     google: {

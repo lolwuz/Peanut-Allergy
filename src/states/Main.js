@@ -32,17 +32,17 @@ export default class Main extends Phaser.State {
         // Add a player to the game.
         this.player = new Player({
             game: this.game,
-            x: this.game.world.centerX,
+            x: this.game.world.centerX - (300 * window.devicePixelRatio),
             y: this.game.world.centerY,
             key: 'player',
-            frame: 'fly.png'
+            frame: 'stand.png'
         });
 
-        this.player2 = new Phaser.Sprite(this.game, this.game.world.left, this.game.world.centerY, "p", "pwalk.png");
-        this.game.add.existing(this.player2);
-        this.game.physics.enable(this.player2, Phaser.Physics.ARCADE);
-        this.player2.body.bounce.y = 0.1;
-        this.player2.anchor.setTo(0.5);
+        // this.player2 = new Phaser.Sprite(this.game, this.game.world.left, this.game.world.centerY, "p", "pwalk.png");
+        // this.game.add.existing(this.player2);
+        // this.game.physics.enable(this.player2, Phaser.Physics.ARCADE);
+        // this.player2.body.bounce.y = 0.1;
+        // this.player2.anchor.setTo(0.5);
         
         // Add Physics to player
         this.game.physics.arcade.gravity.y = 1400;
@@ -59,7 +59,7 @@ export default class Main extends Phaser.State {
         let startGround = new Ground({
             // Start ground
             game: this.game,
-            x: this.game.world.centerX,
+            x: this.game.world.left,
             y: this.game.world.centerY + 300 * window.devicePixelRatio,
             width: this.game.world.width * 3,
             height: this.game.height / 2,
@@ -100,14 +100,14 @@ export default class Main extends Phaser.State {
         }
 
         this.game.physics.arcade.collide(this.player, this.groundArray);
-        this.game.physics.arcade.collide(this.player2, this.obstracleArray);
-        this.game.physics.arcade.collide(this.player2, this.groundArray);
+        // this.game.physics.arcade.collide(this.player2, this.obstracleArray);
+        // this.game.physics.arcade.collide(this.player2, this.groundArray);
         if(this.game.physics.arcade.collide(this.player, this.obstracleArray)){
             this.score.setLives(-1);
         }
 
         let target = new Phaser.Point(this.player.x, this.player.y).add(-200, 0);
-        this.game.physics.arcade.moveToObject(this.player2, target, 10, 100);
+        // this.game.physics.arcade.moveToObject(this.player2, target, 10, 100);
 
         // Update clouds
         for (let i = 0; i < this.cloudArray.length; i++) {
@@ -147,7 +147,7 @@ export default class Main extends Phaser.State {
         this.score.setScore(this.distance);
 
         if(this.player.y < - 1000){
-            this.game.state.start('Icarus', true, true);
+            this.game.state.start('Icarus', true, false);
         }
     }
 
@@ -191,7 +191,8 @@ export default class Main extends Phaser.State {
             game: this.game,
             x: this.game.world.centerX + this.game.world.width,
             y: this.game.world.centerY + (300 * window.devicePixelRatio) - this.player.height * spawnLevel,
-            key: 'peanut',
+            key: 'peanut_products',
+            frame: Math.floor((Math.random() * 12) + 1)+ '.png',
             speed: this.speed
         };
         this.obstracleArray.push(new PeanutObject(config));
